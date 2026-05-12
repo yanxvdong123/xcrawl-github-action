@@ -1,0 +1,25 @@
+name: 'XCrawl Scrape'
+description: 'Scrape a web page using XCrawl Proxy'
+inputs:
+  url:
+    description: 'URL to scrape'
+    required: true
+  api-key:
+    description: 'XCrawl API key'
+    required: true
+  format:
+    description: 'Output format (markdown, json, text, html)'
+    required: false
+    default: 'markdown'
+  output-file:
+    description: 'Output file path'
+    required: false
+    default: 'scraped-output.md'
+outputs:
+  content:
+    description: 'Scraped content'
+  status:
+    description: 'Success or failure'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
